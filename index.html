@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ball</title>
+    <link rel="icon" href="img/ball.png">
+    <style>
+       body{
+            margin:0; /* reset the body default margin */
+       }
+       #world img{
+            width: 10vh;
+}
+       #world{
+            width: 100vw; 
+            height: 100vh;
+            background-color: #333;
+       }
+       .air{
+            height: 36vh;
+            background: linear-gradient(#fff, #05ffff);
+       }
+       .field{
+            height: 16vh;
+            background: linear-gradient(#8deb8d, #006400);
+       }
+       .ball {
+            float: left;  
+       }
+       .ball.onField{
+            margin-top: 3vh;
+       }
+       .ball.onField.left {
+            opacity: .3;
+       }
+       .ball.inAir.center {
+            margin-left: calc(50vw - 5vw);
+            opacity: .6;
+       }
+       .ball.onField.right {  
+            margin-left: 90vw;
+       }
+       /*
+       Selectorul .ball.onField.left { ... } este utilizat pentru a accesa doar elementul care contine toate aceste clase, neafectand altele cu unele dintre aceste clase.
+       Insa, selectorul .ball { ... } este folosit pentru a stabili proprietati elementelor cu clasa "ball" indiferent daca aceste elemente mai au sau nu alte clase.
+       
+       In .ball {...} e mai corect sa fie scrise stiluri comune pentru div-urile din ambele sectiiuni, iar in ceilalti selectori care afecteaza mingea - proprietati particulare.
+       */
+    </style>
+</head>
+<body>
+    
+
+    <div id="world">
+       <section class="air">
+            <div class="ball inAir center"><img src="img/ball.png" alt=""></div>
+       </section>
+       <section class="field">
+           <div class="ball onField left"><img src="img/ball.png" alt=""></div><div class="ball onField right"><img src="img/ball.png" alt=""></div>
+       </section>
+    </div>
+
+
+</body>
+</html>
